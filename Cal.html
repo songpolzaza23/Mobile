@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<!-- Document responsive across devices. -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Document's character set. -->
+    <meta charset="UTF-8">
+	<title>My Calculator</title>
+	<!-- Linking CSS -->
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<!-- Linking Google Fonts -->
+	<link rel="stylesheet" type="text/css"
+	      href="https://fonts.googleapis.com/css?family=Montserrat">
+</head>
+<body>
+
+	<div class="header-container">
+		<header>Calculator</header>
+	</div>
+
+	<div class="main-container">
+		<section id="main-bio">
+			<h2>Calculator</h2>
+			<table border = "3px" width = "300px" cellpadding = "10px" align = "center">
+				<tr>
+					<td colspan="1.5">
+						<input id="firstnumber" placeholder="ใส่ช่อง 1">
+					</td>
+					<td colspan="1.5">
+						<input id="secnumber" placeholder="ใส่ช่อง 2">
+					</td>
+				</tr>
+
+			<table border = "3px" width = "300px" cellpadding = "10px" align = "center">
+				<tr>
+					<td colspan="4">
+						<input = type="text" id="TextAns" placeholder="คำตอบ">
+					</td>
+				</tr>
+				<tr>
+					<td  colspan="1" onclick="getSum()">+</td>
+					<td  colspan="1" onclick="getMinus()">-</td>
+					<td  colspan="1" onclick="getMul()">*</td>
+					<td  colspan="1" onclick="getDivide()">/</td>
+				</tr>
+    </section>
+
+		<div id = "output"></div>
+
+		<script>
+        var num1 = document.getElementById("firstnumber");
+        var num2 = document.getElementById("secnumber");
+        var output = document.getElementById("output");
+
+        function showResult(result){
+                document.getElementById('TextAns').value = result;
+        }
+        function getSum(){
+            let ans = parseInt(num1.value) + parseInt(num2.value);
+            showResult(ans);
+        }
+				function getMinus(){
+            let ans = parseInt(num1.value) - parseInt(num2.value);
+            showResult(ans);
+        }
+				function getMul(){
+            let ans = parseInt(num1.value) * parseInt(num2.value);
+            showResult(ans);
+        }
+				function getDivide(){
+            let ans = parseInt(num1.value) / parseInt(num2.value);
+            showResult(ans);
+        }
+    </script>
+
+	</div>
+	<!-- Don't remove-->
+</body>
+</html>
